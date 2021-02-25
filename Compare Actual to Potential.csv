@@ -1,0 +1,253 @@
+State,State_ABV,Type,Total
+Alaska,AK,POP,734002.00
+Alaska,AK,POT Solar,0.89
+Alaska,AK,POT Wind,9938926.00
+Alaska,AK,USE Photo,15344.00
+Alaska,AK,USE Wind,416.00
+Alabama,AL,POP,4908621.00
+Alabama,AL,POT Wind,2870.00
+Alabama,AL,USE Photo,1949.00
+Alabama,AL,USE Wind,1.00
+Arkansas,AR,POP,3038999.00
+Arkansas,AR,POT Solar,0.91
+Arkansas,AR,POT Wind,311306.00
+Arkansas,AR,USE Photo,32370.00
+Arkansas,AR,USE Wind,15.00
+Arizona,AZ,POP,7378494.00
+Arizona,AZ,POT Solar,1.18
+Arizona,AZ,POT Wind,169037.00
+Arizona,AZ,USE Photo,7169171.00
+Arizona,AZ,USE Wind,1148.00
+California,CA,POP,39937489.00
+California,CA,POT Solar,1.00
+California,CA,POT Wind,3925199.00
+California,CA,USE Photo,49579540.00
+California,CA,USE Wind,14828.00
+Colorado,CO,POP,5845526.00
+Colorado,CO,POT Solar,0.99
+Colorado,CO,POT Wind,8664967.00
+Colorado,CO,USE Photo,1962226.00
+Colorado,CO,USE Wind,153.00
+Connecticut,CT,POP,3563077.00
+Connecticut,CT,POT Solar,0.79
+Connecticut,CT,POT Wind,41567.00
+Connecticut,CT,USE Photo,1706714.00
+Connecticut,CT,USE Wind,177.00
+DistrictofColumbia,DC,POP,720687.00
+DistrictofColumbia,DC,USE Photo,236905.00
+Delaware,DE,POP,982895.00
+Delaware,DE,POT Solar,0.84
+Delaware,DE,POT Wind,78487.00
+Delaware,DE,USE Photo,355987.00
+Delaware,DE,USE Wind,75.00
+Florida,FL,POP,21992985.00
+Florida,FL,POT Solar,0.95
+Florida,FL,POT Wind,44335.00
+Florida,FL,USE Photo,1327557.00
+Florida,FL,USE Wind,111.00
+Georgia,GA,POP,10736059.00
+Georgia,GA,POT Solar,0.92
+Georgia,GA,POT Wind,283765.00
+Georgia,GA,USE Photo,16357.00
+Hawaii,HI,POP,1412687.00
+Hawaii,HI,POT Wind,3655280.00
+Hawaii,HI,USE Photo,5413495.00
+Hawaii,HI,USE Wind,179.00
+Iowa,IA,POP,3179849.00
+Iowa,IA,POT Solar,0.87
+Iowa,IA,POT Wind,15249403.00
+Iowa,IA,USE Photo,182390.00
+Iowa,IA,USE Wind,4773.00
+Idaho,ID,POP,1826156.00
+Idaho,ID,POT Solar,0.93
+Idaho,ID,POT Wind,400989.00
+Idaho,ID,USE Photo,141235.00
+Idaho,ID,USE Wind,1373.00
+Illinois,IL,POP,12659682.00
+Illinois,IL,POT Solar,0.79
+Illinois,IL,POT Wind,4513822.00
+Illinois,IL,USE Photo,170092.00
+Illinois,IL,USE Wind,3472.00
+Indiana,IN,POP,6745354.00
+Indiana,IN,POT Solar,0.83
+Indiana,IN,POT Wind,2310873.00
+Indiana,IN,USE Photo,89461.00
+Indiana,IN,USE Wind,699.00
+Kansas,KS,POP,2910357.00
+Kansas,KS,POT Solar,0.95
+Kansas,KS,POT Wind,28770655.00
+Kansas,KS,USE Photo,41940.00
+Kansas,KS,USE Wind,562.00
+Kentucky,KY,POP,4499692.00
+Kentucky,KY,POT Solar,0.83
+Kentucky,KY,POT Wind,3400.00
+Kentucky,KY,USE Photo,30852.00
+Kentucky,KY,USE Wind,15.00
+Louisiana,LA,POP,4645184.00
+Louisiana,LA,POT Solar,0.90
+Louisiana,LA,POT Wind,1553383.00
+Louisiana,LA,USE Photo,1415413.00
+Louisiana,LA,USE Wind,6.00
+Massachusetts,MA,POP,6976597.00
+Massachusetts,MA,POT Solar,0.83
+Massachusetts,MA,POT Wind,1040981.00
+Massachusetts,MA,USE Photo,4067094.00
+Massachusetts,MA,USE Wind,1314.00
+Maryland,MD,POP,6083116.00
+Maryland,MD,POT Solar,0.84
+Maryland,MD,POT Wind,278073.00
+Maryland,MD,USE Photo,2964058.00
+Maryland,MD,USE Wind,360.00
+Maine,ME,POP,1345790.00
+Maine,ME,POT Solar,0.84
+Maine,ME,POT Wind,1097743.00
+Maine,ME,USE Photo,227988.00
+Maine,ME,USE Wind,6333.00
+Michigan,MI,POP,10045029.00
+Michigan,MI,POT Solar,0.77
+Michigan,MI,POT Wind,3434290.00
+Michigan,MI,USE Photo,197776.00
+Michigan,MI,USE Wind,2823.00
+Minnesota,MN,POP,5700671.00
+Minnesota,MN,POT Solar,0.84
+Minnesota,MN,POT Wind,12771300.00
+Minnesota,MN,USE Photo,177646.00
+Minnesota,MN,USE Wind,265.00
+Missouri,MO,POP,6169270.00
+Missouri,MO,POT Solar,0.87
+Missouri,MO,POT Wind,4546288.00
+Missouri,MO,USE Photo,559866.00
+Missouri,MO,USE Wind,254.00
+Mississippi,MS,POP,2989260.00
+Mississippi,MS,POT Solar,0.92
+Mississippi,MS,POT Wind,13385.00
+Mississippi,MS,USE Photo,6317.00
+Mississippi,MS,USE Wind,1.00
+Montana,MT,POP,1086759.00
+Montana,MT,POT Solar,0.86
+Montana,MT,POT Wind,22525039.00
+Montana,MT,USE Photo,140898.00
+Montana,MT,USE Wind,1318.00
+NorthCarolina,NC,POP,10611862.00
+NorthCarolina,NC,POT Solar,0.90
+NorthCarolina,NC,POT Wind,1598242.00
+NorthCarolina,NC,USE Photo,379105.00
+NorthCarolina,NC,USE Wind,63.00
+NorthDakota,ND,POP,761723.00
+NorthDakota,ND,POT Solar,0.84
+NorthDakota,ND,POT Wind,24513238.00
+NorthDakota,ND,USE Photo,325.00
+NorthDakota,ND,USE Wind,165.00
+Nebraska,NE,POP,1952570.00
+Nebraska,NE,POT Solar,0.89
+Nebraska,NE,POT Wind,27980810.00
+Nebraska,NE,USE Photo,5855.00
+Nebraska,NE,USE Wind,241.00
+NewHampshire,NH,POP,1371246.00
+NewHampshire,NH,POT Solar,0.83
+NewHampshire,NH,POT Wind,66304.00
+NewHampshire,NH,USE Photo,387739.00
+NewHampshire,NH,USE Wind,430.00
+NewJersey,NJ,POP,8936574.00
+NewJersey,NJ,POT Solar,0.81
+NewJersey,NJ,POT Wind,547980.00
+NewJersey,NJ,USE Photo,5366873.00
+NewJersey,NJ,USE Wind,363.00
+NewMexico,NM,POP,2096640.00
+NewMexico,NM,POT Solar,1.16
+NewMexico,NM,POT Wind,10872836.00
+NewMexico,NM,USE Photo,955856.00
+NewMexico,NM,USE Wind,318.00
+Nevada,NV,POP,3139658.00
+Nevada,NV,POT Solar,1.19
+Nevada,NV,POT Wind,160908.00
+Nevada,NV,USE Photo,1710012.00
+Nevada,NV,USE Wind,4544.00
+NewYork,NY,POP,19440469.00
+NewYork,NY,POT Solar,0.83
+NewYork,NY,POT Wind,1304341.00
+NewYork,NY,USE Photo,5141636.00
+NewYork,NY,USE Wind,10526.00
+Ohio,OH,POP,11747694.00
+Ohio,OH,POT Solar,0.74
+Ohio,OH,POT Wind,1017686.00
+Ohio,OH,USE Photo,208255.00
+Ohio,OH,USE Wind,3443.00
+Oklahoma,OK,POP,3954821.00
+Oklahoma,OK,POT Solar,0.98
+Oklahoma,OK,POT Wind,13548485.00
+Oklahoma,OK,USE Photo,29274.00
+Oklahoma,OK,USE Wind,445.00
+Oregon,OR,POP,4301089.00
+Oregon,OR,POT Solar,0.71
+Oregon,OR,POT Wind,1693323.00
+Oregon,OR,USE Photo,1039996.00
+Oregon,OR,USE Wind,392.00
+Pennsylvania,PA,POP,12820878.00
+Pennsylvania,PA,POT Solar,0.83
+Pennsylvania,PA,POT Wind,147546.00
+Pennsylvania,PA,USE Photo,1296391.00
+Pennsylvania,PA,USE Wind,2713.00
+PuertoRico,PR,POP,3032165.00
+PuertoRico,PR,USE Photo,29389.00
+PuertoRico,PR,USE Wind,2.00
+RhodeIsland,RI,POP,1056161.00
+RhodeIsland,RI,POT Solar,0.82
+RhodeIsland,RI,POT Wind,112505.00
+RhodeIsland,RI,USE Photo,123878.00
+RhodeIsland,RI,USE Wind,359.00
+SouthCarolina,SC,POP,5210095.00
+SouthCarolina,SC,POT Solar,0.92
+SouthCarolina,SC,POT Wind,681507.00
+SouthCarolina,SC,USE Photo,533355.00
+SouthCarolina,SC,USE Wind,1.00
+SouthDakota,SD,POP,903027.00
+SouthDakota,SD,POT Solar,0.87
+SouthDakota,SD,POT Wind,27152105.00
+SouthDakota,SD,USE Photo,287.00
+SouthDakota,SD,USE Wind,222.00
+Tennessee,TN,POP,6897576.00
+Tennessee,TN,POT Solar,0.85
+Tennessee,TN,POT Wind,8153.00
+Tennessee,TN,USE Photo,388.00
+Tennessee,TN,USE Wind,1.00
+Texas,TX,POP,29472295.00
+Texas,TX,POT Solar,0.98
+Texas,TX,POT Wind,47133937.00
+Texas,TX,USE Photo,1046220.00
+Texas,TX,USE Wind,3894.00
+Utah,UT,POP,3282115.00
+Utah,UT,POT Solar,0.95
+Utah,UT,POT Wind,207515.00
+Utah,UT,USE Photo,1363807.00
+Utah,UT,USE Wind,377.00
+Virginia,VA,POP,8626207.00
+Virginia,VA,POT Solar,0.87
+Virginia,VA,POT Wind,497384.00
+Virginia,VA,USE Photo,303994.00
+Virginia,VA,USE Wind,491.00
+Vermont,VT,POP,628061.00
+Vermont,VT,POT Solar,0.77
+Vermont,VT,POT Wind,64183.00
+Vermont,VT,USE Photo,439259.00
+Vermont,VT,USE Wind,262.00
+Washington,WA,POP,7797095.00
+Washington,WA,POT Solar,0.67
+Washington,WA,POT Wind,959787.00
+Washington,WA,USE Photo,851393.00
+Washington,WA,USE Wind,688.00
+Wisconsin,WI,POP,5851754.00
+Wisconsin,WI,POT Solar,0.81
+Wisconsin,WI,POT Wind,2258833.00
+Wisconsin,WI,USE Photo,175208.00
+Wisconsin,WI,USE Wind,1298.00
+WestVirginia,WV,POP,1778070.00
+WestVirginia,WV,POT Solar,0.79
+WestVirginia,WV,POT Wind,38990.00
+WestVirginia,WV,USE Photo,35079.00
+WestVirginia,WV,USE Wind,68.00
+Wyoming,WY,POP,567025.00
+Wyoming,WY,POT Solar,0.96
+Wyoming,WY,POT Wind,13814124.00
+Wyoming,WY,USE Photo,16470.00
+Wyoming,WY,USE Wind,3399.00
