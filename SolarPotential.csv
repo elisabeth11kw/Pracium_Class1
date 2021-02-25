@@ -1,7 +1,8 @@
-Alaska,AL,0
-Alabama,AK,0.89
-Arizona,AZ,1.18
+State,State_abv,Solar_Pot
+Alaska,AK,0.89
+Alabama,AL,0
 Arkansas,AR,0.91
+Arizona,AZ,1.18
 California,CA,1
 Colorado,CO,0.99
 Connecticut,CT,0.79
@@ -9,42 +10,42 @@ Delaware,DE,0.84
 Florida,FL,0.95
 Georgia,GA,0.92
 Hawaii,HI,0
+Iowa,IA,0.87
 Idaho,ID,0.93
 Illinois,IL,0.79
 Indiana,IN,0.83
-Iowa,IA,0.87
 Kansas,KS,0.95
 Kentucky,KY,0.83
 Louisiana,LA,0.9
-Maine,ME,0.84
-Maryland,MD,0.84
 Massachusetts,MA,0.83
+Maryland,MD,0.84
+Maine,ME,0.84
 Michigan,MI,0.77
 Minnesota,MN,0.84
-Mississippi,MS,0.92
 Missouri,MO,0.87
+Mississippi,MS,0.92
 Montana,MT,0.86
+NorthCarolina,NC,0.9
+NorthDakota,ND,0.84
 Nebraska,NE,0.89
+NewHampshire,NH,0.83
+NewJersey,NJ,0.81
+NewMexico,NM,1.16
 Nevada,NV,1.19
-New Hampshire,NH,0.83
-New Jersey,NJ,0.81
-New Mexico,NM,1.16
-New York,NY,0.83
-North Carolina,NC,0.9
-North Dakota,ND,0.84
+NewYork,NY,0.83
 Ohio,OH,0.74
 Oklahoma,OK,0.98
 Oregon,OR,0.71
 Pennsylvania,PA,0.83
-Rhode Island,RI,0.82
-South Carolina,SC,0.92
-South Dakota,SD,0.87
+RhodeIsland,RI,0.82
+SouthCarolina,SC,0.92
+SouthDakota,SD,0.87
 Tennessee,TN,0.85
 Texas,TX,0.98
 Utah,UT,0.95
-Vermont,VT,0.77
 Virginia,VA,0.87
+Vermont,VT,0.77
 Washington,WA,0.67
-West Virginia,WV,0.79
 Wisconsin,WI,0.81
+WestVirginia,WV,0.79
 Wyoming,WY,0.96
