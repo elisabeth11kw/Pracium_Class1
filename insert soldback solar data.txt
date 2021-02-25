@@ -1,0 +1,96 @@
+---drop table "Renew"."SolarandSolar_Summary";
+insert into "Renew"."WindandSolar_Summary" --insert Solar
+(SELECT 
+year, 
+month,
+month||'/1/'||year Date_data,
+us.state_abv,
+us.state, 
+'Photo' as type,
+'Soldback-Industrial' as COM_Type,
+sum(coalesce(coalesce(u.ind_soldback_Photo,0),0)) as total  
+FROM "Renew"."Util_Energy" U,
+"Renew"."USPopulation" US
+where u.state=us.state_abv
+group by year, 
+month,
+month||'/1/'||year,
+us.state_abv,
+us.state)
+union
+(SELECT 
+year, 
+month,
+month||'/1/'||year Date_data,
+us.state_abv,
+us.state, 
+'Photo' as type,
+'Soldback-Commercial' as COM_Type,
+sum(coalesce(coalesce(u.com_soldback_Photo,0),0)) as total  
+FROM "Renew"."Util_Energy" U,
+"Renew"."USPopulation" US
+where u.state=us.state_abv
+group by year, 
+month,
+month||'/1/'||year,
+us.state_abv,
+us.state)
+union
+(SELECT 
+year, 
+month,
+month||'/1/'||year Date_data,
+us.state_abv,
+us.state, 
+'Photo' as type,
+'Soldback-Residential' as COM_Type,
+sum(coalesce(coalesce(u.res_soldback_Photo,0),0)) as total  
+FROM "Renew"."Util_Energy" U,
+"Renew"."USPopulation" US
+where u.state=us.state_abv
+group by year, 
+month,
+month||'/1/'||year,
+us.state_abv,
+us.state)
+union
+(SELECT 
+year, 
+month,
+month||'/1/'||year Date_data,
+us.state_abv,
+us.state, 
+'Photo' as type,
+'Soldback-Transportation' as COM_Type,
+sum(coalesce(coalesce(u.tran_soldback_Photo,0),0)) as total  
+FROM "Renew"."Util_Energy" U,
+"Renew"."USPopulation" US
+where u.state=us.state_abv
+group by year, 
+month,
+month||'/1/'||year,
+us.state_abv,
+us.state)
+union
+(SELECT 
+year, 
+month,
+month||'/1/'||year Date_data,
+us.state_abv,
+us.state, 
+'Photo' as type,
+'Soldback-Total' as COM_Type,
+sum(coalesce(coalesce(u.total_soldback_Photo,0),0)) as total  
+FROM "Renew"."Util_Energy" U,
+"Renew"."USPopulation" US
+where u.state=us.state_abv
+group by year, 
+month,
+month||'/1/'||year,
+us.state_abv,
+us.state);
+
+
+commit;
+
+
