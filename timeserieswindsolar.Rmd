@@ -1,0 +1,164 @@
+---
+title: "Correlated time series"
+author: "elisabeth wolfert"
+date: "2/13/2021"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r SW_Load_lib1}
+# Load libraries for data test.
+
+library("car")
+library("dplyr")
+library("ggplot2")
+library("ggpubr")
+library("tidyverse")
+library("broom")
+library("AICcmodavg")
+library("gplots")
+library("multcompView")
+library("BSDA")
+library("DescTools")
+library("effsize")
+library("coin")
+library("rcompanion")
+```
+
+
+```{r load_csv2}
+#Load Data File and Filter to Pull Required Data for the data test.
+
+SolarWind = read.csv("DateWindSolarTime.csv",header = TRUE)
+
+```
+
+
+```{r Name3}
+#Display Data in Dataframe again showing more values.
+
+str(SolarWind)
+```
+
+
+```{r summary_dw4}
+#Summary of Data Frame
+
+summary(SolarWind)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r solar_time5}
+#Display Data in Data frame again showing photo(solar) values.
+
+str(SolarWind$total_cust_photo)
+```
+
+
+```{r wind_time6}
+#Display Data in Data frame again showing Wind values.
+
+str(SolarWind$total_cust_wind)
+```
+
+
+```{r wind_chart7}
+#Plot Data in Data frame again showing wind chart.
+
+plot.ts(SolarWind$total_cust_wind)
+```
+
+
+```{r solar_chart8}
+#Plot Data in Data frame again showing photo(solar) chart.
+
+plot.ts(SolarWind$total_cust_photo)
+```
+```{r time_test9}
+#Create a time series data chart from in Data frame again showing wind data.
+
+timeseries.ws.name <-  ts(SolarWind, 2011, 2019, 12)
+plot(timeseries.ws.name)
+```
+
+
+```{r windtest_time10}
+#Create a variable with wind time series data.
+
+wind <- c(38723,	41551,	59835,	61195,	62994,	63055,	59377,	60220,	61198
+)
+```
+
+
+```{r solartest_time11}
+#Create a variable with solar time series data.
+
+solar <- c(1593860,	2347514,	4610973,	6692424,	9808340,	14091612,	17881589,	21350503,	25153052)
+```
+
+
+```{r solar_times12}
+#Create a plot of the variable with wind time series data.  The plot shows the growth of the wind data.
+
+plot.ts(wind)
+```
+
+
+```{r solar_gr_chart13}
+#Create a plot of the variable with solar time series data.  The plot shows the growth of the solar data at a faster rate.
+
+plot.ts(solar)
+```
+
+
+```{r wind_chart14}
+#Combine the plots of the variables for wind and solar time series data.
+
+combined.solar_wind <-  matrix(c(solar,wind),nrow = 18)
+
+```
+
+
+
+```{r timetestwind15}
+#Run a time series test of data.
+
+solar_wind.timeseries <- ts(combined.solar_wind,start = c(2011,18),frequency = 18)
+```
+
+```{r PrintTimes16}
+#Print the results of the time series test.
+
+png(file = "rainfall_combined.png")
+```
+
+
+```{r PrintTS17}
+#Print the data from the combined time series data.
+
+print(solar_wind.timeseries)
+```
+
+
+```{r comb_chrt_time18}
+#Show the results in a plot of the combined wind and solar data in a plot. The plot shows an irregular result showing that the combined data for wind a solar does not have a correlated significance.
+
+plot(solar_wind.timeseries, main = "Multiple Time Series")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

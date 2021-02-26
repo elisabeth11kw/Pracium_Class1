@@ -1,0 +1,377 @@
+---
+title: "Solar Wind compare"
+author: "elisabeth wolfert"
+date: "1/30/2021"
+output:
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r SW_Load_p}
+#Load Common R Libraries to examine the data set.
+
+library("car")
+library("dplyr")
+library("ggplot2")
+library("ggpubr")
+library("tidyverse")
+library("broom")
+library("gplots")
+library("coin")
+library("multcompView")
+library("BSDA")
+library("DescTools")
+library("effsize")
+library("AICcmodavg")
+library("rcompanion")
+```
+
+
+```{r SW_Load_Data}
+#Load Data File and Filter to Pull Required Data for the data test.
+
+SolarWind_PRE = read.csv("WindSolar_State9.csv",header = TRUE)
+```
+
+
+```{r SW_Filter_Data}
+
+# Filter ony required data to standardize the comparisons.
+
+SolarWind <- filter(SolarWind_PRE,  #SolarWind_PRE$State == c('California','Arizona'),
+                                  SolarWind_PRE$Type %in% c('Wind','Photo'),
+                                  SolarWind_PRE$Com_Type %in%  
+                                   c('Commercial','Residential','Industrial'),
+                                  SolarWind_PRE$Total > 0)
+```
+
+
+```{r SW_Display_Data}
+# Load data set to see that the data displays properly and filters correctly.
+head(SolarWind)
+
+```
+
+
+```{r SW_Str}
+#Display Data in Dataframe again showing more values.
+
+str(SolarWind)
+```
+
+
+```{r SW_Sum_Total}
+#Sum Total Data field
+
+sum(SolarWind$Total)
+
+```
+
+
+```{r SW_SummaryData1}
+#Summary of Data Frame
+
+summary(SolarWind)
+```
+
+
+```{r SW_name}
+#Fields in Data Frame summary data.
+
+names(SolarWind)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r SW_Factor}
+
+# Data Discovery
+# Change Data Types to Factors
+
+SolarWind$Type <- as.factor(SolarWind$Type)
+SolarWind$Com_Type <- as.factor(SolarWind$Com_Type)
+SolarWind$Total <- as.numeric(SolarWind$Total)
+
+is.factor(SolarWind$State)
+is.factor(SolarWind$Type)
+is.factor(SolarWind$Com_Type)
+is.numeric(SolarWind$Total)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r SW_FactorState}
+# Table Data Types to Show Values by Type
+
+table(SolarWind$Type)
+table(SolarWind$Com_Type)
+
+```
+
+```{r WS_GroupBy}
+# Display values with Grouping for Summary data for Type
+# Hypothesis
+# We are performing a test to see which type of energy type is used more: Wind or Solar. Below is a grouping of the Type field showing the two energy types of Photo(Solar) or Wind energy.  The analysis will be performed using a 5% significance level.
+
+# H0: There will be no difference between the mean types for Wind or Photo(Solar) energy usage.
+
+# H1: There will be a difference between the mean types for Wind or Photo(Solar) energy usage.
+
+group_by(SolarWind, Type) %>% summarise(count=n(),mean=mean(SolarWind$Total),sd=sd(SolarWind$Total),.groups='drop')
+
+```
+
+
+```{r WS1_GroupBy}
+# Display values with Grouping for Summary data for Com Type
+
+# Hypothesis
+# We are performing a test to see which type of renewable energy source types including; Commercial, Residential or Industrial renewable energy usage  is used more often. Below is a grouping of the Com Type field showing the three energy sources of Commercial, Residential or Industrial energy.  The analysis will be performed using a 5% significance level.
+
+# H0: There will be no difference between the mean types for Commercial, Residential or Industrial renewable energy usage.
+
+# H1: There will be a difference between the mean types for Commercial, Residential or Industrial renewable energy usage.  
+
+#The count value shows different field counts but the mean and standard deviations are the same.
+
+group_by(SolarWind, SolarWind$Com_Type) %>% summarise(count=n(),mean=mean(SolarWind$Total),sd=sd(SolarWind$Total),.groups='drop')
+
+
+```
+```{r WS_HISTMRR}
+# Create a Histogram on the Total field in data file
+# 
+# The data in the file has a distribution that leans to the left
+
+hist(SolarWind$Total, col=c("green"),main = "Histogram of State for Total", xlab="Total")
+```
+```{r com_BW_BOXPLOT1}
+# Box plot comparing the types fo Wind and Solar
+# Photo is another term for Solar.  The Box plot shows that Solar is the dominant energy source.
+
+boxplot(SolarWind$Total ~ SolarWind$Type, col=c("purple","red"),main="Type Solar and Wind Boxplot", ylab = "Total",xlab = "Type")
+```
+```{r SW_BW_BOXPLOT2}
+# Created a Box plot to compare energy sources of Commercial, Residential and Industrial.  The box plot shows that the data is driven by Residential sources.
+
+
+boxplot(SolarWind$Total ~ SolarWind$Com_Type, col=c("purple","red"),main="Type Renewable Energy Type", ylab = "Total",xlab = "Com Type")
+```
+
+```{r WS_TW_BOXPLOT3}
+# Created a box plot comparing Solar Type to Com Types.  The Box plot is leaning toward Solar and Residential Data.  The chart is hard to read becuase of the size but the chart should be leaning toward Residential and Solar.
+
+boxplot(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, col=c("purple","red","Green"),main="Renewable Energy Type compared to Source", ylab = "Total",xlab = "Types")
+```
+
+
+
+
+
+```{r WS_State_Scatter1}
+# Scatter plot for Total and Type of Wind or Photo(Solar) energy.
+
+scatter.smooth(x=SolarWind$Total, y=SolarWind$Type, col=c("Green","Red"), main="Total ~ Type",ylab = "Type",xlab= "Total")  # scatterplot
+```
+
+
+```{r WS_State_Scatter2}
+# Smooth Scatter plot for Total and Com Type including Residential, Commercial or Industrial energy sources.
+
+scatter.smooth(x=SolarWind$Total, y=SolarWind$Com_Type, col=c("Green","Red"), main="Total ~ Type",ylab = "Source Type",xlab= "Total")  # scatterplot
+```
+
+
+```{r GLM1}
+# Created GLM model for Total and Type
+
+glm(formula = SolarWind$Type ~ SolarWind$Total, family = binomial, 
+    data = SolarWind)
+
+```
+```{r GLM2}
+# Fit the GLM model and displayed the summary
+
+lrfit <- glm(SolarWind$Com_Type ~ SolarWind$Total,family=binomial,data=SolarWind)
+summary(lrfit)
+
+```
+```{r WS_ST_PLOT1}
+# Plot the means for Total and Type showing that Photo(Solar) dominates the data.  The plot shows that the means for Photo(Solar) power has a higher significance.
+
+plotmeans(SolarWind$Total ~ SolarWind$Type, col=c("purple","red","Green"),main="Plot Means Total by Type", ylab = "Type",xlab = "Total")
+
+```
+```{r WS_comtype_PLOT2}
+# Plot the means for Total and Com Type showing that Residential dominates the data.  Plotting the means for energy source shows that the Residential source data has a higher level of significance in the data.
+
+plotmeans(SolarWind$Total ~ SolarWind$Com_Type, col=c("purple","red","Green"),main="Plot Means Total by Type", ylab = "Type",xlab = "Total")
+```
+
+```{r OneWaySState1}
+# Ran a one way ANOVA test with the p value less than 0.05 with (P > 2.89e-14) giving the level of significance.  Now that the data has been evaluated we run the one way ANOVA test and see that the P value shows a 95 percent significance with the p value (p<=0.05) so we can not accept the null hypothesis.  The null hypothesis is rejected and we can see that there is a significant difference between the two types of Wind and Photo(Solar) energy types.
+
+#According to the output of the test for energy type being  (F(1,627)=60.61,p=2.89e-14) we see a high level of significance between energy types.
+
+SType_av= aov(SolarWind$Total ~ SolarWind$Type, data = SolarWind)
+summary(SType_av)
+
+```
+
+```{r OneWayWState2}
+# Ran a one way ANOVA test with the p value less than 0.05 with (P > <2e-16) giving the level of significance.  Now that the data has been evaluated we run the one way ANOVA test and see that the P value shows a 95 percent significance with the p value (p<=0.05) so we can not accept the null hypothesis.  The null hypothesis is rejected and we can see that there is a significant difference between the two types of Wind and Photo(Solar) energy types.
+
+#According to the output of the test for energy type being (F(2,626)=67.29,p=<2e-16) we see a high level of significance between energy types.
+
+WCom_Type_av= aov(SolarWind$Total ~ SolarWind$Com_Type, data = SolarWind)
+summary(WCom_Type_av)
+```
+```{r PlotWState1}
+# Plot the residuals for the ANOVA test by Type energy source.
+
+plot(SType_av)
+```
+
+
+```{r PlotWState2}
+# Plot the residuals for the ANOVA test by Com Type energy source.
+
+plot(WCom_Type_av)
+```
+
+
+
+
+```{r PairWiseBW1}
+# Run a pairwise test on the data for energy Type when we reject the null hypothesis.
+
+pairwise.t.test(SolarWind$Total, SolarWind$Type,p.adjust.method = "BH",pool.sd = FALSE)
+```
+
+```{r PairWiseBW2}
+# Run a pairwise test on the data for energy Com Type when we reject the null hypothesis.
+
+pairwise.t.test(SolarWind$Total, SolarWind$Com_Type,p.adjust.method = "BH",pool.sd = FALSE)
+```
+```{r leveneTestType1}
+# Run the levene test of the Type Wind or Photo(Solar) data test.
+
+leveneTest(SolarWind$Total ~SolarWind$Type,data=SolarWind)
+
+```
+```{r leveneTestComType2}
+# Run the levene test of the Com Type Residential, Commercial or Industrial data test.
+
+leveneTest(SolarWind$Total ~SolarWind$Com_Type,data=SolarWind)
+```
+```{r OnewayT1}
+# Run the oneway test of the Type Wind or Photo(Solar) data test.
+
+oneway.test(SolarWind$Total ~SolarWind$Type,data=SolarWind)
+```
+```{r OnewayCT2}
+# Run the one way test of the Com Type Residential, Commercial or Industrial data test.
+oneway.test(SolarWind$Total ~SolarWind$Com_Type,data=SolarWind)
+
+```
+
+```{r InteractionT1}
+# Run the interaction Plot test of the Type Wind or Photo(Solar) data test.  The plot shows the higher level of sinificance for Photo(Solar) energy.
+
+interaction.plot(SolarWind$Total, SolarWind$Type, SolarWind$Total,type="b",col=c(1:3),leg.bty="o",leg.bg="beige",lwd=2,xlab="Type",ylab="Total",main="Interaction Plot")
+```
+```{r InteractionCT2}
+# Run the interaction plot test of the Com Type Residential, Commercial or Industrial data test.  We cans ee in the test that Residential Solar energy is the has a higher level of significance.
+
+interaction.plot(SolarWind$Total, SolarWind$Com_Type, SolarWind$Total,type="b",col=c(1:3),leg.bty="o",leg.bg="beige",lwd=2,xlab="Com Type",ylab="Total",main="Interaction Plot")
+```
+```{r TwoWayAov1}
+# Now we run a two way ANOVA test to see if there is any difference in significance between the types of energy sources for Wind and Photo(Solar) energy or the source of that energy of Residential, Industrial of Commercial.
+
+# H0: There will be no difference between the mean types for Wind or Photo(Solar) energy usage.
+
+# H1: There will be a difference between the mean types for Wind or Photo(Solar) energy usage.
+
+# H0: There will be no difference between the mean types for Residential, Commercial and Industrial energy usage.
+
+# H1: There will be a difference between the mean types for Residential, Commercial and Industrial  usage.
+
+SolarWind_av2= aov(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, data = SolarWind)
+
+#Summary data for the two way ANOVA test.
+
+summary(SolarWind_av2)
+
+```
+```{r PlotTwoWaySW}
+#Plot the summary data for the two way ANOVA test.
+
+plot(SolarWind_av2)
+
+```
+
+```{r InterationTwoWay2}
+# Now we run a an interaction chart on two way ANOVA data test to see if there is any difference in significance between the types of energy sources for Wind and Photo(Solar) energy or the source of that energy of Residential, Industrial of Commercial.
+
+interaction<- aov(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, data = SolarWind)
+summary(interaction)
+
+```
+```{r Model3AIC}
+#model.names <- c("SState_av", "WState_av","SolarWind_av2", "interaction")
+#aictab(model.set, modnames = model.names)
+```
+
+```{r SWPlotTK}
+# Plot the residuals for the two way ANOVA test.
+
+par(mfrow=c(2,2))
+plot(SolarWind_av2)
+par(mfrow=c(1,1))
+
+```
+
+```{r TukeyTW}
+# Run the tukey two way test on the two way ANOVA data.
+
+tukey.two.way <- aov(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, data = SolarWind)
+
+# Run the tukey two way test on the two way ANOVA data.  The plots show that there is a 95 percent confidence and significance level in the result of the tukey tests.
+
+tukey.plot.aov<-aov(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, data = SolarWind)
+
+tukey.plot.test<-TukeyHSD(tukey.plot.aov)
+plot(tukey.plot.test, las = 1)
+```
+```{r  TukeyTwoWay2}
+#Display the results of the tukey two way test on the two way ANOVA data.
+
+tukey.two.way
+
+```
+
+```{r LM1}
+#Run the linear regresion model on the results of the tukey two way test on the two way ANOVA data.
+
+lm_output <- lm(SolarWind$Total ~ SolarWind$Type * SolarWind$Com_Type, data = SolarWind)
+summary(lm_output)
+```
+```{r LMPlot2} 
+#Plot the results of the tukey linear regresion model of the two way test on the two way ANOVA data.  The P value is less than (p<0.5) with a value of 2.2e-16.
+
+plot(lm_output)
+
+```
+
