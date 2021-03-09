@@ -26,7 +26,8 @@ I will do a web scrape on twitter to see and comments on renewable energy.  The 
 
 ## Data Source
 
-Loaded data file in to postgress sql database as table.  Converted the crosstab file data into a data format with date, concatinating month and year to date.  Then created query to pull data to be formated by Type Solar or Wind.  Com_type reneable energy souce.  Total equaled enegy megawats of power.  I had recreate the data source a couple times before the data worked correctly.
+Loaded data file in to postgress sql database as table.  Converted the crosstab file data into a data format with date, concatinating month and year to date.  Then created query to pull data to be formated by Type Solar or Wind.  Com_type reneable energy souce.  Total equaled enegy megawats of power.  I had recreate the data source a couple times before the data worked correctly.  Loaded the data into a PostGreSQL table and create some summary data, eliminate blank or columns with a total of zero on the whole column.  Gain a better understanding of terms in the file by finding word definitions on the data.
+
 
 1.1	Create Source Table 	Electricity_Net_Metering_by_Utility_in_US.csv	Primary Data source for project
 
@@ -35,6 +36,11 @@ Loaded data file in to postgress sql database as table.  Converted the crosstab 
 5.1	Create Source Table 	USPopulation.sql	- Create table from csv file USPopulation.csv with population count by state
 
 ## Source Data Files
+
+*	First, I will use some exploratory data analysis to explain the data.  
+*	Run some queries to view data and summarize for reporting.
+*	Comparison of energy to population and commercial energy use vs. residential. 
+* Compare the population in the united states by pulling population counts by state compared to wind and solar power potential by location.
 
 2.2	Source Data File	USPopulation.csv	- Create tables for Wind Solar and US Population
 
@@ -65,9 +71,15 @@ The output data source used in R- studio and the Tableau reports took a couple d
 
 ## Tableau Report Data
 
+*	Do research of website for data source and document data.  Research wind and solar potentials in the united states.
+*	Create some Tableau reports from the data for visualizations such as a map, bar charts, scatter grams and bar plots and time series graph.   
+*	data visualization – Graphs showing which states have increased wind and solar energy, which states are using wind and solar energy, which states have increased wind and solar energy demand and decreased other energy.
+
 9.1	Tableau Report Data	Presentation Data  -	Tableau Report Story Wind and Solar
 
 ## Output Data
+
+*	Compare the population in the united states by pulling population counts by state compared to wind and solar power potential by location.
 
 10.1	Output Data File	Compare Actual to Potential.csv	- Combined Potential Compared to Actual
 
@@ -79,11 +91,19 @@ The output data source used in R- studio and the Tableau reports took a couple d
 
 ## Python Script
 
-Created python script to scrape web site greenpeace.org but had dificulty with site tags.  I think that some websites may be more in an html format over other sites that have objects making scraping data more complex.
+Created python script to scrape web site greenpeace.org but had dificulty with site tags.  I think that some websites may be more in an html format over other sites that have objects making scraping data more complex.  Python data sweep to gather data for solar and wind power energy to see where there are locations that do not have solar or wind power currently that could generate power in the future.
+
 
 12.1	Python Script	Greenpeace_SpacyWordMap.py	- Add files via upload
 
 ## R Markdown R Studio
+
+*	I will use R Studio to do some supervised learning of the data and prediction analysis.
+*	Create models using R studio for linear regression and Two Way Anova test to see if there is any correlation based on location for wind power and solar renewable energy locations.
+
+*	Do a logistical regression model to test if there is a rise in solar and wind power.
+*	Run a two-way a nova test to see if there is a correlation between power usage of solar and wind energy and state population.
+
 13.1	Rmarkdown Script	Solar and Wind by state.Rmd	- R Markdown Scripts using R Studio
 
 15.1	Rmarkdown Script	timeserieswindsolar.Rmd	- R Markdown Scripts using R Studio
