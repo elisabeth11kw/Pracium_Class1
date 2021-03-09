@@ -26,6 +26,8 @@ I will do a web scrape on twitter to see and comments on renewable energy.  The 
 
 ## Data Source
 
+Loaded data file in to postgress sql database as table.  Converted the crosstab file data into a data format with date, concatinating month and year to date.  Then created query to pull data to be formated by Type Solar or Wind.  Com_type reneable energy souce.  Total equaled enegy megawats of power.  I had recreate the data source a couple times before the data worked correctly.
+
 1.1	Create Source Table 	Electricity_Net_Metering_by_Utility_in_US.csv	Primary Data source for project
 
 3.2	Create Source Table 	Create table from csv.sql	Create table from csv file Electricity_Net_Metering_by_Utility_in_US.csv by state providing energy usage by state table Renew Database table "Renew"."Util_Energy" 
@@ -74,6 +76,8 @@ I will do a web scrape on twitter to see and comments on renewable energy.  The 
 16.1	Output Data File	WindAndSolar33.csv	- Updated Data source files
 
 ## Python Script
+
+Created python script to scrape web site greenpeace.org but had dificulty with site tags.  I think that some websites may be more in an html format over other sites that have objects making scraping data more complex.
 
 12.1	Python Script	Greenpeace_SpacyWordMap.py	- Add files via upload
 
