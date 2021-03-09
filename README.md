@@ -1,5 +1,5 @@
 [Solar and Wind Energy.docx](https://github.com/elisabeth11kw/Renewable-Energy/files/6102252/Solar.and.Wind.Energy.docx)
-[Solar and Wind Energy.docx](https://github.com/elisabeth11kw/Renewable-Energy/files/6102252/Solar.and.Wind.Energy.docx)
+
 # Renewable-Energy
 # Practicum Project Solar and Wind Energy
 
@@ -17,8 +17,7 @@ Elisabeth Wolfert elisabeth11kw@yahoo.com
 *	Find areas where there is potential for renewable energy growth in the United States.
 * Analyze were based on the population the greatest benefits for new renewable energy exist.
 
-Analyze text in articles to find the common theme in renewable energy Data.
-The current data source that I have is more than 33k records containing data from 50 states and 2 territories with data from 2011 to 2019.  
+Analyze text in articles to find the common theme in renewable energy Data.  Do research of website for data source and document data.  Research wind and solar potentials in the united states.  The current data source that I have is more than 33k records containing data from 50 states and 2 territories with data from 2011 to 2019.  
 
 I will do a web scrape on twitter to see and comments on renewable energy.  The data contains summary data with 87 different columns which I will summarize or remove columns if they do not add value.
 
@@ -26,7 +25,8 @@ I will do a web scrape on twitter to see and comments on renewable energy.  The 
 
 ## Data Source
 
-Loaded data file in to postgress sql database as table.  Converted the crosstab file data into a data format with date, concatinating month and year to date.  Then created query to pull data to be formated by Type Solar or Wind.  Com_type reneable energy souce.  Total equaled enegy megawats of power.  I had recreate the data source a couple times before the data worked correctly.  Loaded the data into a PostGreSQL table and create some summary data, eliminate blank or columns with a total of zero on the whole column.  Gain a better understanding of terms in the file by finding word definitions on the data.
+Loaded data file in to postgress sql database as table.  Converted the crosstab file data into a data format with date, concatinating month and year to date.  Then created query to pull data to be formated by Type Solar or Wind.  Com_type reneable energy souce.  Total equaled enegy megawats of power.  I had recreate the data source a couple times before the data worked correctly.  Loaded the data into a PostGreSQL table and create some summary data, eliminate blank or columns with a total of zero on the whole column.  Gain a better understanding of terms in the file by finding word definitions on the data.  
+
 
 
 1.1	Create Source Table 	Electricity_Net_Metering_by_Utility_in_US.csv	Primary Data source for project
@@ -71,7 +71,6 @@ The output data source used in R- studio and the Tableau reports took a couple d
 
 ## Tableau Report Data
 
-*	Do research of website for data source and document data.  Research wind and solar potentials in the united states.
 *	Create some Tableau reports from the data for visualizations such as a map, bar charts, scatter grams and bar plots and time series graph.   
 *	data visualization – Graphs showing which states have increased wind and solar energy, which states are using wind and solar energy, which states have increased wind and solar energy demand and decreased other energy.
 
@@ -107,5 +106,28 @@ Created python script to scrape web site greenpeace.org but had dificulty with s
 13.1	Rmarkdown Script	Solar and Wind by state.Rmd	- R Markdown Scripts using R Studio
 
 15.1	Rmarkdown Script	timeserieswindsolar.Rmd	- R Markdown Scripts using R Studio
+
+* My Account - Windsource® (xcelenergy.com)https://www.cnbc.com/2019/10/31/us-wind-energy-capacity-now-over-100-gigawatts-says-new-report.html
+* http://www.bionomicfuel.com/benefits-of-windmill-energy/https://www.cnbc.com/2020/10/14/facebook-to-use-ai-in-bid-to-improve-renewable-energy-storage.htmlYears of Living 
+* Dangerously: Climate Change Deniers and Kansas Wind Energy – 
+* Greenpeace USAYears of Living Dangerously Season 1: Episode 6 Clip - Droughts – YouTube
+* solar energy pictures photos – Bing
+* 10 Advantages of Solar Energy, Benefits of Solar Energy (linquip.com)
+* New Colorado laws could help shift state away from carbon emissions - Denver Business Journal
+* renewable energy - Bing images
+* Electricity Net Metering by Utility in US | Colorado Information Marketplace | data.colorado.gov
+* 1543436651044.jpg (500×308) (azureedge.net)
+* Electricity Net Metering by Utility in US | Colorado Information Marketplace | data.colorado.gov
+* Wind generation potential in the United States - Wikipedia
+* * https://en.wikipedia.org/wiki/Wind_generation_potential_in_the_United_States#:~:text=Wind%20Capacity%20Potential%20and%20Annual%20Generation%20%20,%20%20272%20%2010%20more%20rows
+
+* https://www.instituteforenergyresearch.org/renewable-mandates/
+* Sun Potential
+* https://neo.ne.gov/programs/stats/inf/201.htm
+* Renewable Electricity Mandates and Goals - IER (instituteforenergyresearch.org)
+* Electricity Net Metering by Utility in US | Colorado Information Marketplace | data.colorado.gov
+* https://data.colorado.gov/Energy/Electricity-Net-Metering-by-Utility-in-US/4jjg-g3yq
+* ![image](https://user-images.githubusercontent.com/60304531/110484837-4545de80-80a8-11eb-9d55-7fee533630ee.png)
+
 
 
