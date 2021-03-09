@@ -107,6 +107,8 @@ Created python script to scrape web site greenpeace.org but had dificulty with s
 
 15.1	Rmarkdown Script	timeserieswindsolar.Rmd	- R Markdown Scripts using R Studio
 
+# References
+
 * My Account - Windsource® (xcelenergy.com)https://www.cnbc.com/2019/10/31/us-wind-energy-capacity-now-over-100-gigawatts-says-new-report.html
 * http://www.bionomicfuel.com/benefits-of-windmill-energy/https://www.cnbc.com/2020/10/14/facebook-to-use-ai-in-bid-to-improve-renewable-energy-storage.htmlYears of Living 
 * Dangerously: Climate Change Deniers and Kansas Wind Energy – 
