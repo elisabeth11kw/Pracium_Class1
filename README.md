@@ -52,6 +52,8 @@ Loaded data file in to postgress sql database as table.  Converted the crosstab 
 
 ## Cleaned Data
 
+The output data source used in R- studio and the Tableau reports took a couple discovery re evaluation but found in the end the data worked to created valid reports.
+
 4.4	Create Clean Table	WindPotential.sql	- Create tables for Wind Solar and US Population
 
 6.1	Create Clean Table	create table summary.sql	- Data Scripts With Summary Data for Reporting
