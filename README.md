@@ -129,7 +129,6 @@ Created python script to scrape web site greenpeace.org but had dificulty with s
 * Renewable Electricity Mandates and Goals - IER (instituteforenergyresearch.org)
 * Electricity Net Metering by Utility in US | Colorado Information Marketplace | data.colorado.gov
 * https://data.colorado.gov/Energy/Electricity-Net-Metering-by-Utility-in-US/4jjg-g3yq
-* ![image](https://user-images.githubusercontent.com/60304531/110484837-4545de80-80a8-11eb-9d55-7fee533630ee.png)
 
 
 
